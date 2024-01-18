@@ -1,0 +1,219 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    background-image: url('https://picture-bed-001-1310572365.cos.ap-guangzhou.myqcloud.com/3070PC/80a5366f89dfbd27ec46f669e0eac84.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.title {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 107%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* Error message styling */
+.error {
+    color: #ff0033;
+    background-color: #ffebeb;
+    border-left: 5px solid #ff0033;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    animation: fadeOut 5s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.error-cat {
+    position: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeOut 5s ease-in-out;
+}
+
+.error-cat img {
+    width: 100px; /* Adjusted size */
+}
+
+.speech-bubble {
+    background-color: #ffebcd;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #ff4500;
+    margin-left: 10px; /* Space between cat and speech bubble */
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+   
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ffebcd transparent transparent transparent;
+    transform: translateX(-50%);
+}
+
+/* Styles for the theme toggle button */
+.theme-switch-wrapper {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+.theme-toggle .sun, .theme-toggle .moon {
+    display: none;
+}
+
+/* Show the appropriate icon based on the theme */
+body.dark-mode .theme-toggle .sun {
+    display: inline;
+}
+
+body:not(.dark-mode) .theme-toggle .moon {
+    display: inline;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #333; /* Dark background for body */
+    color: #fff; /* Light text for body */
+}
+
+body.dark-mode .login-box {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for login box */
+}
+
+body.dark-mode .title, body.dark-mode .subtitle {
+    color: #fff; /* Light text for titles in dark mode */
+}
+
+/* Different background image for dark mode */
+body.dark-mode .login-container {
+    background-image: url('https://picture-bed-001-1310572365.cos.ap-guangzhou.myqcloud.com/3070PC/20231005005911.png');
+}
+
+/* Styles for the slogan */
+.slogan {
+    position: absolute;
+    top: 25%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    font-size: 3em; /* Adjust size as needed */
+    color: white; /* Or any color you prefer */
+    opacity: 0.7; /* Adjust transparency as needed */
+    z-index: 10; /* Ensure it's above the background image */
+    text-align: center;
+    font-weight: bold;
+    max-width: 100%; /* Prevents the slogan from being too wide */
+    word-wrap: break-word; /* Ensures text wraps if it's too long */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.7; /* Adjust transparency as needed */
+    color: rgb(9, 9, 26); /* or any color you prefer */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.2em; /* Increase the font size */
+}
+
+/* Responsive adjustments for tablets (like iPads) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .slogan {
+        font-size: 5vw; /* Adjust the size for tablets */
+        top: 15vh; /* You may need to adjust this for very small screens */
+        /* ... other styles as needed ... */
+        width: 90%; /* Adjust width to ensure it's not too narrow */
+        padding: 0 5%; /* Reduce padding on the left and right if necessary */
+    }
+}
+
+@media (max-width: 767px) {
+    .slogan {
+        font-size: 6vw; /* Adjust font size as needed, can use larger vw units */
+        padding: 0 3%; /* Reduce padding on the left and right if necessary */
+        width: 94%; /* Adjust width to ensure it's not too narrow */
+        top: 15vh; /* Adjust top positioning if necessary */
+        transform: translateX(-50%);
+        /* Other styles as needed */
+    }
+}
+
+/* Further adjustments for small mobile devices */
+@media (max-width: 480px) {
+    .slogan {
+        display: none;
+        font-size: 7vw; /* Even larger font size for very small screens */
+        top: 15vh; /* You may need to adjust this for very small screens */
+        /* ... other styles as needed ... */
+        width: 94%;
+        padding: 0 3%; /* Even less padding on the left and right */
+    }
+
+}
